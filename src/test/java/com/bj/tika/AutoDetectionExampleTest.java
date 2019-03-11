@@ -13,7 +13,7 @@ import com.bj.tika.extraction.AutoDetectionExample;
 public class AutoDetectionExampleTest {
 
 	@Test
-	public void extractFromDocFileTest() {
+	public void extractFromDocFile_워드파일_추출_Test() {
 		Parser parser = new AutoDetectParser();
 		try {
 			AutoDetectionExample.extractFromFile(parser, "/doc01.doc");
@@ -30,7 +30,7 @@ public class AutoDetectionExampleTest {
 	}
 
 	@Test
-	public void extractFromDocxFileTest() {
+	public void extractFromDocxFile_워드파일_추출_Test() {
 		Parser parser = new AutoDetectParser();
 		try {
 			AutoDetectionExample.extractFromFile(parser, "/doc02.docx");
@@ -47,7 +47,7 @@ public class AutoDetectionExampleTest {
 	}
 
 	@Test
-	public void extractFromPptxFileTest() {
+	public void extractFromPptxFile_PPT파일_추출_Test() {
 		Parser parser = new AutoDetectParser();
 		try {
 			AutoDetectionExample.extractFromFile(parser, "/ppt01.pptx");
@@ -63,7 +63,7 @@ public class AutoDetectionExampleTest {
 		}
 	}
 	@Test
-	public void extractFromXlsxFileTest() {
+	public void extractFromXlsxFile_엑셀파일_추출_Test() {
 		Parser parser = new AutoDetectParser();
 		try {
 			AutoDetectionExample.extractFromFile(parser, "/excel01.xlsx");
@@ -80,7 +80,7 @@ public class AutoDetectionExampleTest {
 	}
 
 	@Test
-	public void extractFromHwpFileTest() {
+	public void extractFromHwpFile_아래한글파일_추출_Test() {
 		Parser parser = new AutoDetectParser();
 		try {
 			AutoDetectionExample.extractFromFile(parser, "/hwp01.hwp");
