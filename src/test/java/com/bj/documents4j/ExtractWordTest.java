@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class ExtractWordTest {
 
-	@Test
+//	@Test
 	public void extract_워드파일_변환_Test() {
 		ExtractWord ew = new ExtractWord();
 		boolean result = ew.extract();
