@@ -10,54 +10,33 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<tika.version>1.20</tika.version>
-		<wicket.version>6.10.0</wicket.version>
-		<documents4j.version>1.0.3</documents4j.version>
+		<docx4j.version>6.1.2</docx4j.version>
 		<poi.version>4.0.1</poi.version>
 		<xdocreport.version>2.0.2</xdocreport.version>
+		<itextpdf.version>5.5.13</itextpdf.version>
+		<slf4j.version>1.7.5</slf4j.version>
+		<logback.version>1.1.8</logback.version>
 	</properties>
 
 	<dependencies>
-		<!-- 아파치 Tika 라이브러리 -->
 		<dependency>
-			<groupId>org.apache.tika</groupId>
-			<artifactId>tika-core</artifactId>
-			<version>${tika.version}</version>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-compress</artifactId>
+		    <version>1.18</version>
 		</dependency>
+	
 		<dependency>
-			<groupId>org.apache.tika</groupId>
-			<artifactId>tika-parsers</artifactId>
-			<version>${tika.version}</version>
+			<groupId>org.docx4j</groupId>
+			<artifactId>docx4j</artifactId>
+			<version>${docx4j.version}</version>
+			<exclusions>
+			    <exclusion>
+			        <groupId>org.slf4j</groupId>
+			        <artifactId>slf4j-log4j12</artifactId>
+			    </exclusion>
+			</exclusions> 
 		</dependency>
-
-		<!-- documents4j library -->
-		<!-- Local dependencies -->
-		<dependency>
-			<groupId>com.documents4j</groupId>
-			<artifactId>documents4j-local</artifactId>
-			<version>${documents4j.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.documents4j</groupId>
-			<artifactId>documents4j-transformer-msoffice-word</artifactId>
-			<version>${documents4j.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.documents4j</groupId>
-			<artifactId>documents4j-transformer-msoffice-excel</artifactId>
-			<version>${documents4j.version}</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/com.documents4j/documents4j-transformer-msoffice-test -->
-		<dependency>
-			<groupId>com.documents4j</groupId>
-			<artifactId>documents4j-transformer-msoffice-test</artifactId>
-			<version>1.0.3</version>
-			<scope>test</scope>
-		</dependency>
-
+	
 		<!-- poi -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -72,11 +51,27 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-scratchpad</artifactId>
-			<version>${poi.version}</version>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-scratchpad</artifactId>
+		    <version>4.0.1</version>
 		</dependency>
-
+		
+		<dependency>
+		     <groupId>fr.opensagres.xdocreport</groupId>
+		     <artifactId>fr.opensagres.xdocreport.converter</artifactId>
+		     <version>${xdocreport.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>fr.opensagres.xdocreport</groupId>
+			<artifactId>fr.opensagres.poi.xwpf.converter.pdf</artifactId>
+			<version>${xdocreport.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>fr.opensagres.xdocreport</groupId>
+		    <artifactId>fr.opensagres.xdocreport.converter.odt.odfdom</artifactId>
+		    <version>${xdocreport.version}</version>
+		</dependency>
+<!-- 
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml-schemas</artifactId>
@@ -94,64 +89,30 @@
 			<artifactId>poi-examples</artifactId>
 			<version>${poi.version}</version>
 		</dependency>
-
-<!-- 		<dependency>
-			<groupId>fr.opensagres.xdocreport</groupId>
-			<artifactId>org.apache.poi.xwpf.converter.core</artifactId>
-			<version>${xdocreport.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>fr.opensagres.xdocreport</groupId>
-			<artifactId>org.apache.poi.xwpf.converter.pdf</artifactId>
-			<version>${xdocreport.version}</version>
-		</dependency>
  -->
- <!-- https://mvnrepository.com/artifact/fr.opensagres.xdocreport/fr.opensagres.xdocreport.converter -->
-<dependency>
-    <groupId>fr.opensagres.xdocreport</groupId>
-    <artifactId>fr.opensagres.xdocreport.converter</artifactId>
-    <version>${xdocreport.version}</version>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/fr.opensagres.xdocreport/fr.opensagres.xdocreport.document.docx -->
-<dependency>
-    <groupId>fr.opensagres.xdocreport</groupId>
-    <artifactId>fr.opensagres.xdocreport.document.docx</artifactId>
-    <version>${xdocreport.version}</version>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/fr.opensagres.xdocreport/fr.opensagres.xdocreport.converter.docx.xwpf -->
-<dependency>
-    <groupId>fr.opensagres.xdocreport</groupId>
-    <artifactId>fr.opensagres.xdocreport.converter.docx.xwpf</artifactId>
-    <version>${xdocreport.version}</version>
-</dependency>
-
-		
-		<!-- External dependencies -->
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-core</artifactId>
-			<version>${wicket.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-extensions</artifactId>
-			<version>${wicket.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>18.0</version>
+ 
+ 		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itextpdf</artifactId>
+			<version>${itextpdf.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>1.7.13</version>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
 		</dependency>
 
 		<!-- Testing dependencies -->
@@ -161,12 +122,31 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<version>1.10.19</version>
-			<scope>test</scope>
-		</dependency>
+		
 	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.1.0.RELEASE</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
