@@ -72,13 +72,14 @@ public class DocxToPDFConverter extends Converter {
 			options.subOptions(pdfOptions);
 			
 			processing();
+			
+			// TODO bsh, PdfConverter or IConverter를 사용할지 테스트 필요함.
 			PdfConverter.getInstance().convert(document, outStream, pdfOptions);
 			
 //			IConverter converter = ConverterRegistry.getRegistry().getConverter(options);
 //			converter.convert(inStream, outStream, options);
 			
 		} catch (XWPFConverterException | IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			finished();

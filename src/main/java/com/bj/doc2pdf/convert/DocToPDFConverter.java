@@ -26,7 +26,6 @@ public class DocToPDFConverter extends Converter {
 	public DocToPDFConverter(InputStream inStream, OutputStream outStream, boolean showMessages,
 			boolean closeStreamsWhenComplete) {
 		super(inStream, outStream, showMessages, closeStreamsWhenComplete);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -63,6 +62,7 @@ public class DocToPDFConverter extends Converter {
                 logger.debug("Length:" + paragraphs[i].length());  
                 logger.debug("Paragraph" + i + ": " + paragraphs[i].toString());  
 
+                // FIXME bsh - 폰트 사이즈 고정하면 안됨.
 	            // add the paragraph to the document  
 	            document.add(new Paragraph(paragraphs[i], new Font(bf, 12)));  
             }  

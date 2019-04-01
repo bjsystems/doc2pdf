@@ -50,6 +50,10 @@ public class Parser {
 					converter = new PptToPDFConverter(inStream, outStream, doc.isShowMessage(), true);
 				} else if (lowerCaseInPath.endsWith("pptx")) {
 					converter = new PptxToPDFConverter(inStream, outStream, doc.isShowMessage(), true);
+				} else if (lowerCaseInPath.endsWith("xls")) {
+					converter = new XlsToPDFConverter(inStream, outStream, doc.isShowMessage(), true);
+				} else if (lowerCaseInPath.endsWith("xlsx")) {
+					converter = new XlsxToPDFConverter(inStream, outStream, doc.isShowMessage(), true);
 				} else if (lowerCaseInPath.endsWith("odt")) {
 					converter = new OdtToPDF(inStream, outStream, doc.isShowMessage(), true);
 				} else {

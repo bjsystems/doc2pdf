@@ -22,10 +22,10 @@ public class ConverterTest {
 	}
 
 	@Test
-	public void test_docx_corrupt_to_pdf() {
+	public void test_docx_Protocol_to_pdf() {
 		Document doc = new Document();
-		doc.setInFilePath(resPath + "/corrupt.docx");
-		doc.setOutFilePath(tgtPath + "/corrupt.pdf");
+		doc.setInFilePath(resPath + "/Protocol.docx");
+		doc.setOutFilePath(tgtPath + "/protocol.pdf");
 		Converter converter = Parser.parse(doc);
 		converter.convert();
 	}
