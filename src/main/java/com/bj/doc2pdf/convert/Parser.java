@@ -56,6 +56,8 @@ public class Parser {
 					converter = new XlsxToPDFConverter(inStream, outStream, doc.isShowMessage(), true);
 				} else if (lowerCaseInPath.endsWith("odt")) {
 					converter = new OdtToPDF(inStream, outStream, doc.isShowMessage(), true);
+				} else if (lowerCaseInPath.endsWith("hwp")) {
+					converter = new HwpToPDFConverter(inStream, outStream, doc.isShowMessage(), true);
 				} else {
 					converter = null;
 				}

@@ -89,7 +89,7 @@ public class XlsToPDFConverter extends Converter {
 					int cellNumber = 0;
 //					int numberOfColumns = 0;
 					if (flag) {
-						table = new PdfPTable(row.getLastCellNum());
+						table = new PdfPTable(getLastCellNum(sheet));
 //						table.setHorizontalAlignment(Element.ALIGN_CENTER);
 						table.setWidthPercentage(100);
 						table.setSpacingBefore(0f);

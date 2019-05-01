@@ -93,10 +93,10 @@ public class ConverterTest {
 		converter.convert();
 	}
 
-//	@Test
+	@Test
 	public void test_hwp_hwp01_to_pdf() {
 		Document doc = new Document();
-		doc.setInFilePath(resPath + "/hpw01.hpw");
+		doc.setInFilePath(resPath + "/hwp01.hwp");
 		doc.setOutFilePath(tgtPath + "/hwp01.pdf");
 		Converter converter = Parser.parse(doc);
 		converter.convert();
